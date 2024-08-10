@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/transaksi")
+@RequestMapping("/api/transactions")
 public class TransactionController {
 
     @Autowired

@@ -171,15 +171,15 @@ public class TransactionService {
     public TotalSalesResponse getTotalSales(LocalDate startDate, LocalDate endDate) {
 
         // Mengambil semua transaksi dengan tipe EATIN
-        List<Transaction> eatInTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.EAT_IN.name());
+        List<Transaction> eatInTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.EAT_IN);
         Integer eatInTotal = calculateTotal(eatInTransactions);
 
         // Mengambil semua transaksi dengan tipe ONLINE
-        List<Transaction> onlineTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.ONLINE.name());
+        List<Transaction> onlineTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.ONLINE);
         Integer onlineTotal = calculateTotal(onlineTransactions);
 
         // Mengambil semua transaksi dengan tipe TAKEAWAY
-        List<Transaction> takeAwayTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.TAKE_AWAY.name());
+        List<Transaction> takeAwayTransactions = transactionRepository.findByTransDateBetweenAndTransactionType(startDate, endDate, TransactionType.TAKE_AWAY);
         Integer takeAwayTotal = calculateTotal(takeAwayTransactions);
 
         // Mengembalikan total penjualan untuk setiap tipe transaksi
